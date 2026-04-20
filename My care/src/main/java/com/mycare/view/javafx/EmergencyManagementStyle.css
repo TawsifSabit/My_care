@@ -1,0 +1,199 @@
+/* Emergency Management System Styles */
+
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+    -fx-background-color: linear-gradient(to right, #1976d2, #42a5f5);
+    -fx-padding: 15px;
+    -fx-background-radius: 5px;
+}
+
+.header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.refresh-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 15px;
+    -fx-font-size: 12px;
+}
+
+.refresh-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Section Titles */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1976d2;
+    -fx-padding: 0 0 10px 0;
+}
+
+/* Action Buttons */
+.action-btn {
+    -fx-padding: 10px 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.primary-btn {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #1565c0;
+}
+
+.danger-btn {
+    -fx-background-color: #d32f2f;
+    -fx-text-fill: white;
+}
+
+.danger-btn:hover {
+    -fx-background-color: #b71c1c;
+}
+
+/* Table Styles */
+.emergency-table {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.emergency-table .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e0e0e0;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.emergency-table .table-row-cell {
+    -fx-border-color: #e0e0e0;
+}
+
+.emergency-table .table-row-cell:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.emergency-table .table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+/* Form Panel */
+.form-panel {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 20px;
+}
+
+/* Form Labels */
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-font-size: 12px;
+}
+
+/* Form Fields */
+.form-field {
+    -fx-border-color: #bdbdbd;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 8px;
+    -fx-font-size: 12px;
+}
+
+.form-field:focused {
+    -fx-border-color: #1976d2;
+    -fx-border-width: 2px;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+    -fx-border-color: #bdbdbd;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #666;
+}
+
+/* Submit Button */
+.submit-btn {
+    -fx-background-color: linear-gradient(to right, #ff6b35, #f7931e);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.submit-btn:hover {
+    -fx-background-color: linear-gradient(to right, #e55a2b, #e8850f);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0, 0, 2);
+}
+
+.submit-btn:pressed {
+    -fx-background-color: linear-gradient(to right, #cc4f26, #d1750c);
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 10px 0;
+}
+
+.status-bar .label {
+    -fx-text-fill: #666;
+    -fx-font-size: 12px;
+}
+
+/* Priority Colors (applied via code) */
+/* Critical: #ffebee background, #c62828 text */
+/* High: #fff3e0 background, #ef6c00 text */
+/* Medium: #f3e5f5 background, #7b1fa2 text */
+/* Low: #e8f5e8 background, #2e7d32 text */
+
+/* Status Colors (applied via code) */
+/* Waiting: #fff3e0 background, #ef6c00 text */
+/* In Treatment: #e3f2fd background, #1976d2 text */
+/* Discharged: #e8f5e8 background, #2e7d32 text */
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .form-panel {
+        -fx-pref-width: 300px;
+    }
+}

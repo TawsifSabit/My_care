@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycare.view.javafx.EmergencyManagementController">
+   <children>
+      <!-- Header -->
+      <HBox styleClass="header" VBox.vgrow="NEVER">
+         <children>
+            <Label styleClass="header-title" text="Emergency Management System" HBox.hgrow="ALWAYS" />
+            <Button fx:id="refreshBtn" styleClass="refresh-btn" text="🔄 Refresh" onAction="#refreshTable" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+
+      <!-- Main Content -->
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <!-- Left Panel - Patient Table -->
+            <VBox HBox.hgrow="ALWAYS" spacing="10.0">
+               <children>
+                  <Label styleClass="section-title" text="Emergency Patients" />
+
+                  <!-- Action Buttons -->
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="addPatientBtn" styleClass="action-btn, primary-btn" text="➕ Add Emergency Case" onAction="#showAddPatientForm" />
+                        <Button fx:id="updateStatusBtn" styleClass="action-btn" text="📝 Update Status" onAction="#updatePatientStatus" />
+                        <Button fx:id="dischargeBtn" styleClass="action-btn, danger-btn" text="🏥 Discharge Patient" onAction="#dischargePatient" />
+                     </children>
+                  </HBox>
+
+                  <!-- Table View -->
+                  <TableView fx:id="emergencyTable" VBox.vgrow="ALWAYS" styleClass="emergency-table">
+                     <columns>
+                        <TableColumn fx:id="idColumn" text="Patient ID" prefWidth="80.0" />
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="150.0" />
+                        <TableColumn fx:id="ageColumn" text="Age" prefWidth="60.0" />
+                        <TableColumn fx:id="conditionColumn" text="Condition" prefWidth="200.0" />
+                        <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="100.0" />
+                        <TableColumn fx:id="arrivalTimeColumn" text="Arrival Time" prefWidth="150.0" />
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="120.0" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+
+            <!-- Right Panel - Add Patient Form -->
+            <VBox fx:id="formPanel" styleClass="form-panel" prefWidth="350.0" spacing="15.0">
+               <children>
+                  <Label styleClass="section-title" text="Register Emergency Patient" />
+
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label text="Name:" styleClass="form-label" />
+                        <TextField fx:id="nameField" promptText="Enter patient name" styleClass="form-field" />
+
+                        <Label text="Age:" styleClass="form-label" />
+                        <TextField fx:id="ageField" promptText="Enter age" styleClass="form-field" />
+
+                        <Label text="Condition:" styleClass="form-label" />
+                        <TextArea fx:id="conditionField" promptText="Describe the emergency condition" styleClass="form-field" prefRowCount="3" />
+
+                        <Label text="Priority Level:" styleClass="form-label" />
+                        <ComboBox fx:id="priorityComboBox" promptText="Select priority" styleClass="form-field">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Critical" />
+                                 <String fx:value="High" />
+                                 <String fx:value="Medium" />
+                                 <String fx:value="Low" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+
+                        <Label text="Arrival Time:" styleClass="form-label" />
+                        <TextField fx:id="arrivalTimeField" editable="false" styleClass="form-field" />
+
+                        <Button fx:id="submitBtn" styleClass="submit-btn" text="🚑 Register Emergency Patient" onAction="#registerEmergencyPatient" maxWidth="1.7976931348623157E308" />
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="20.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+
+      <!-- Status Bar -->
+      <HBox styleClass="status-bar" VBox.vgrow="NEVER">
+         <children>
+            <Label fx:id="statusLabel" text="Ready" HBox.hgrow="ALWAYS" />
+            <Label fx:id="patientCountLabel" text="Total Patients: 0" />
+         </children>
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" top="10.0" bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
